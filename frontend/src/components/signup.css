@@ -1,0 +1,18 @@
+.signblockk{
+    
+    margin-top: 20px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.signblock{
+    width: 30vw;
+    margin-top: 20px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
