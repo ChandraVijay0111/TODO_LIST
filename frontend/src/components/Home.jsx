@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Before from './Before'
 
 
 const Home = () => {
@@ -46,6 +47,7 @@ const Home = () => {
 
   return (
     <div className='home'>
+      <Before/>
      <div className='row row-cols-2 my-5 mx-5'>
           {
             array && array.map((task,index)=>(
