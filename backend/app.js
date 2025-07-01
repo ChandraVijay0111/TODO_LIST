@@ -1,24 +1,37 @@
-require('dotenv').config({ path: '../.env' }); // ✅ Required to load .env
+require('dotenv').config({ path: '../.env' }); // Load env vars
 
 const express = require("express");
 const app = express();
 const cors = require("cors");
 
-app.use(cors({ origin: 'http://localhost:3000' }));
+// CORS setup to allow both local and deployed frontend
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://todo-list-mu-jet-77.vercel.app'
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
+
 app.use(express.json());
 
-const connectToDB = require("./conn/conn"); // ⬅️ import the function, not run it yet
+// Connect DB
+const connectToDB = require("./conn/conn");
 const auth = require("./routes/auth");
 
 app.get("/", (req, res) => {
-    res.send("working");
+  res.send("working");
 });
 
 app.use("/api/v1", auth);
 
-// Connect DB first, then start server
+// Use env PORT or fallback to 1000
+const PORT = process.env.PORT || 1000;
+
 connectToDB().then(() => {
-    app.listen(1000, () => {
-        console.log("listening on http://localhost:1000");
-    });
+  app.listen(PORT, () => {
+    console.log(`✅ Server running on http://localhost:${PORT}`);
+  });
 });
