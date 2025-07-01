@@ -5,7 +5,8 @@ const app = express();
 const cors = require("cors");
 
 const allowedOrigins = [
-  'https://todo-list-2-d394.onrender.com' // Your frontend
+  'https://todo-list-2-d394.onrender.com',
+  'https://todo-list-mu-jet-77.vercel.app/'// Your frontend
 ];
 
 app.use(cors({
