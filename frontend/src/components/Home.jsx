@@ -33,7 +33,7 @@ const Home = () => {
   useEffect(()=>{
     const id=sessionStorage.getItem("id");
     const fetch =async ()=>{
-      await axios.get(`https://todo-list-1-pntw.onrender.com/get/${id}`).then((res)=>{
+      await axios.get(`https://todo-list-1-pntw.onrender.com/api/v1/get/${id}`).then((res)=>{
         if(res.data.message!=="NO TASKS TO SHOW"){
         setarray(res.data.List);
         }
