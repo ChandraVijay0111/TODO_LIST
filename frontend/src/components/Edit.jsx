@@ -14,7 +14,7 @@ const Edit = () => {
   const[desc,setdesc]=useState(d);
   
   const save=async()=>{
-    await axios.put(`http://localhost:1000/api/v1/update`,{title,"body":desc,id}).then((res)=>console.log(res));
+    await axios.put(`https://todo-list-1-pntw.onrender.com/api/v1/update`,{title,"body":desc,id}).then((res)=>console.log(res));
     localStorage.clear();
     navigate("/");
   }
