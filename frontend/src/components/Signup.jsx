@@ -28,7 +28,7 @@ const Signup = () => {
     const userdata={
       username:user,email,password
     }
-    await axios.post("https://todo-list-1-pntw.onrender.com/signup",userdata)
+    await axios.post("https://todo-list-1-pntw.onrender.com/api/v1/signup",userdata)
     .then((response)=>{
       alert(response.data.message);
       if(response.data.message==="sign up successful"){
