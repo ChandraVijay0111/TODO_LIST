@@ -21,7 +21,7 @@ const Todo = () => {
   }
 
   const del = async(Id) => {
-    const res=await axios.delete(`http://localhost:1000/api/v1/delete/${Id}`,id);
+    const res=await axios.delete(`https://todo-list-1-pntw.onrender.com/delete/${Id}`,id);
     console.log(res);
     console.log(Id);
     
@@ -38,7 +38,7 @@ const Todo = () => {
     const task={
       title:title,body:desc,id:id
     }
-    await axios.post("http://localhost:1000/api/v1/add",task).then((response)=>{
+    await axios.post("https://todo-list-1-pntw.onrender.com/add",task).then((response)=>{
       console.log(response.data)
     }
     
@@ -59,7 +59,7 @@ const Todo = () => {
   }
   useEffect(()=>{
     const fetch =async ()=>{
-      await axios.get(`http://localhost:1000/api/v1/get/${id}`).then((res)=>{
+      await axios.get(`https://todo-list-1-pntw.onrender.com/get/${id}`).then((res)=>{
         if(res.data.message!=="NO TASKS TO SHOW"){
         setarray(res.data.List);
         }
