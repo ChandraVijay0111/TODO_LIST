@@ -38,7 +38,7 @@ const Todo = () => {
     const task={
       title:title,body:desc,id:id
     }
-    await axios.post("https://todo-list-1-pntw.onrender.com/add",task).then((response)=>{
+    await axios.post("https://todo-list-1-pntw.onrender.com/api/v1/add",task).then((response)=>{
       console.log(response.data)
     }
     
@@ -59,7 +59,7 @@ const Todo = () => {
   }
   useEffect(()=>{
     const fetch =async ()=>{
-      await axios.get(`https://todo-list-1-pntw.onrender.com/get/${id}`).then((res)=>{
+      await axios.get(`https://todo-list-1-pntw.onrender.com/api/v1/get/${id}`).then((res)=>{
         if(res.data.message!=="NO TASKS TO SHOW"){
         setarray(res.data.List);
         }
