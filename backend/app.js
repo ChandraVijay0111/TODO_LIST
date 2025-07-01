@@ -5,7 +5,6 @@ const app = express();
 const cors = require("cors");
 
 const allowedOrigins = [
-  'http://localhost:3000',
   'https://todo-list-mu-jet-77.vercel.app' // Your frontend
 ];
 
