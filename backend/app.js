@@ -6,8 +6,9 @@ const cors = require("cors");
 
 const allowedOrigins = [
   'https://todo-list-2-d394.onrender.com',
-  'https://todo-list-mu-jet-77.vercel.app/'// Your frontend
+  'https://todo-list-mu-jet-77.vercel.app'  // ✅ No slash
 ];
+
 
 app.use(cors({
   origin: allowedOrigins,
