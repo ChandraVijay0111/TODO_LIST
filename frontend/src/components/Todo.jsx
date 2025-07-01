@@ -21,7 +21,7 @@ const Todo = () => {
   }
 
   const del = async(Id) => {
-    const res=await axios.delete(`https://todo-list-1-pntw.onrender.com/delete/${Id}`,id);
+    const res=await axios.delete(`https://todo-list-1-pntw.onrender.com/api/v1/delete/${Id}`,id);
     console.log(res);
     console.log(Id);
     
